@@ -9,7 +9,7 @@ import (
 
 func main() {
   var wg sync.WaitGroup
-  canalRecebedor := make(chan config.Pdf)
+  receivingchannel  := make(chan config.Pdf)
     yellow := "\033[1;33m" 
     reset := "\033[0m"
 
@@ -28,10 +28,10 @@ func main() {
     fmt.Println("erro ao ler pdf")
     return
   } 
-  u := config.Separador(file)
+  Separatetext  := config.separator(file)
   wg.Add(1)
-  go config.CriarPdf(canalRecebedor, &wg)
-  chaveapi := ""  //put the key here
-  config.Mensageiro(u,canalRecebedor,chaveapi, &wg)
+  go config.CreatePdf(receivingchannel, &wg)
+  APIkey  := ""  //put the key here
+  config.Messenger(Separatetext,receivingchannel,APIkey, &wg)
  wg.Wait()
 }
