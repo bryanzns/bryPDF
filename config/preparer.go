@@ -7,34 +7,34 @@ import (
 )
 
 type Pdf struct {
-  Indice int `json:"indice"`
-  Texto string `json:"texto"`
+  Index  int `json:"indice"`
+  Text string `json:"texto"`
 }
-const limiteCaracteres = 3000 
-func Mensageiro(trechos []string, recebidor chan Pdf, chaveapi string, wg *sync.WaitGroup) {
-	var textofinal[]string
-  var mensagem []string
-  var textoacumulado int
-  var contador int
-    for _ , trecho := range trechos {
-		trechoLimpo := strings.ReplaceAll(trecho, "\n", "  ")
-		trechoLimpo = strings.ReplaceAll(trechoLimpo, "\r", "")
-    trechoLimpo = strings.ReplaceAll(trechoLimpo, "\t", " ")
-      if textoacumulado + len(trechoLimpo) > limiteCaracteres {
-      contador += 1
+const characterlimit  = 3000 
+func messenger(excerpts  []string, receiver  chan Pdf, APIkey string, wg *sync.WaitGroup) {
+	var finaltext  []string
+  var message  []string
+  var accumulatedtext   int
+  var counter int
+    for _ , excerpt  := range excerps {
+		cleansection  := strings.ReplaceAll(trecho, "\n", "  ")
+		cleansection = strings.ReplaceAll(trechoLimpo, "\r", "")
+    cleansection = strings.ReplaceAll(trechoLimpo, "\t", " ")
+      if  accumulatedtext + len(cleansection) > characterlimit {
+      counter += 1
       result := strings.Join(mensagem," ")
-			textofinal = append(textofinal, result)
-			mensagem = []string{}
-      textoacumulado = 0
+			finaltext = append(finaltext, result)
+			message = []string{}
+      accumulatedtext = 0
       }
-    mensagem = append(mensagem, trechoLimpo)
-    textoacumulado += len(trechoLimpo)
+    message = append(message, cleansection)
+    textoacumulado += len(cleansection)
   } 
-if len(mensagem) > 0 {
-    contador++
+if len(message) > 0 {
+    counter++
     result := strings.Join(mensagem," ")
-    textofinal = append(textofinal, result)
+    finaltext = append(finaltext, result)
   }
 	wg.Add(1)
-	go CallApi(recebidor,textofinal,chaveapi,wg)
+	go CallApi(receiver ,finaltext ,APIkey,wg)
 }
