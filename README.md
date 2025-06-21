@@ -3,35 +3,35 @@
 
 ###
 
-<h3 align="left">Projeto pessoal feito por bryanzns para traduzir pdfs de inglês para português com a api do gemini para tradução.</h3>
+<h3 align="left">Personal project made by bryanzns to translate pdfs from english to portuguese with gemini api for translation .</h3>
 
 ###
 
-<h1 align="center"># COMO USAR</h1>
+<h1 align="center"># HOW TO USE </h1>
 
 ###
 
-<h3 align="left">Siga esses passos que são necessários para ocorrer a tradução perfeitamente:</h3>
+<h3 align="left">Follow these steps that are necessary for the translation to occur perfectly. :</h3>
 
 ###
 
-<h5 align="left">- É necessário que o pdf seja totalmente texto, nada de imagens ou algo do tipo<br>- Uma chave api para implementar<br>.</h5>
+<h5 align="left">- The PDF must be entirely text, no images or anything like that.<br> - An api key to implement <br>.</h5>
 
 ###
 
-<h4 align="left">• No cmd/main.go, terá a o config.Readpdf onde você colocará o caminho até o pdf.</h4>
+<h4 align="left">• In cmd/main.go, you will have config.Readpdf where you will put the path to the pdf .</h4>
 
 ###
 
-<h4 align="left">• no cmd/main.go terá  a variável "chaveapi", onde você colocará sua chave api.</h4>
+<h4 align="left">• in cmd/main.go there will be the variable "apikey", where you will put your api key .</h4>
 
 ###
 
-<h1 align="left">COMO CONTRIBUIR:</h1>
+<h1 align="left">HOW TO CONTRIBUTE :</h1>
 
 ###
 
-<h5 align="left">Entre nesse servidor e me adicione por lá, esse é meu servidor oficial onde sou o Owner dele :) 👇</h5>
+<h5 align="left">Join this server and add me there, this is my official server where I am the Owner.  :) 👇</h5>
 
 ###
 
