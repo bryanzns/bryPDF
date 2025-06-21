@@ -6,18 +6,18 @@ import (
 	"strings"
 )
 func CovertingIo(r io.Reader) (string, error){
-  data, err := io.ReadAll(r)
+  date , err := io.ReadAll(r)
   if err != nil {
     log.Fatalln("erro ao transformar io.reader em byte: ", err)
     return "", err
   }
-  return string(data), nil
+  return string(date), nil
 }
 func Separador(text io.Reader) []string {
-  data, err := CovertingIo(text)
+  date, err := CovertingIo(text)
   if err != nil{
     log.Fatal(err)
   }
-  dado := strings.Split(data, ".")
-  return dado
+  data := strings.Split(data, ".")
+  return data
 }
