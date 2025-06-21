@@ -1,4 +1,4 @@
-![35 Sem Título_20250621172618](https://github.com/user-attachments/assets/a90b18fc-d730-4c90-bd66-1061f5bc9e3c)
+![1750537672472](https://github.com/user-attachments/assets/671b4c42-35b8-4637-a9fa-e71570accfd3)
 <h1 align="left"># BRYPDF</h1>
 
 ###
