@@ -8,40 +8,40 @@ import (
 	"github.com/jung-kurt/gofpdf"
 )
 
-func CriarPdf(mensageiro chan Pdf, wg *sync.WaitGroup){
+func CreatePdf(messenger chan Pdf, wg *sync.WaitGroup){
   var texto []Pdf
-  for text := range mensageiro {
-  texto = append(texto, Pdf{
-    Indice: text.Indice,
-    Texto: text.Texto,
+  for text := range messenger {
+  text = append(text, Pdf{
+    Index : text.Indice,
+    Text : text.Texto,
   })
   }
-  sort.Slice(texto, func(i int, j int) bool {
-    return texto[i].Indice < texto[j].Indice
+  sort.Slice(text, func(i int, j int) bool {
+    return text[i].Indice < text[j].Indice
   })
-  var textoordenado []string
-  for _, trecho := range texto {
-    textoordenado = append(textoordenado, trecho.Texto)
+  var orderedtext []string
+  for _, excerpt  := range text {
+   orderedtext  = append(orderedtext, excerpt.Text)
   }
-  err := SalvarPdf(textoordenado, "saida.pdf")
+  err := SavePdf(orderedtext, "exit.pdf")
   if err != nil {
-    log.Fatal("erro ao criar a saida do pdf", err)
+    log.Fatal("error creating pdf output ", err)
   }
 	wg.Done()
 }
 
-func SalvarPdf(textoordenado []string, caminhoArquivo string) error {
+func SalvarPdf(orderedtext []string, pathFile  string) error {
     pdf := gofpdf.New("P", "mm", "A4", "") 
     pdf.SetFont("Arial", "", 12)
 
     pdf.AddPage()
 
-    for _, trecho := range textoordenado {
-        pdf.MultiCell(0, 10, trecho, "", "L", false)
+    for _, excerpt := range orderedtext {
+        pdf.MultiCell(0, 10, excerpt, "", "L", false)
         pdf.Ln(5) 
     }
 
-    err := pdf.OutputFileAndClose(caminhoArquivo)
+    err := pdf.OutputFileAndClose(pathFile)
     if err != nil {
         log.Printf("Erro ao criar PDF: %v", err)
         return err
