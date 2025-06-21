@@ -7,17 +7,17 @@ import (
 	"github.com/ledongthuc/pdf"
 )
 func ReadPdf(name string) (io.Reader, error) {
-  file, leitura, err := pdf.Open(name)
+  file, reading , err := pdf.Open(name)
   if err != nil{
-    log.Fatalln("erro ao abrir", err)
+    log.Fatalln("error opening ", err)
     return nil, err
   }
    defer file.Close()
-  texto, err := leitura.GetPlainText()
+  text, err := reading.GetPlainText()
   if err != nil{
-    log.Fatalln("erro ao ler o pdf", err)
+    log.Fatalln("error reading pdf ", err)
     return nil, err
   }
-  return texto, nil 
+  return text, nil 
 }
 
