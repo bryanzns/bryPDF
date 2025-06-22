@@ -21,6 +21,10 @@
 
 ###
 
+<h3 align="left">⚠️ THIS IS A PERSONAL PROJECT AND THE FOUNDER (CodePecker) IS STILL LEARNING</h3>
+
+###
+
 <h3 align="center">❌️ What's still missing:</h3>
 
 ###
