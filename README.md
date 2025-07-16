@@ -43,9 +43,8 @@
 
 <br clear="both">
 
-<h5 align="center">Abra o terminal e execute:<br><br> ```bash 
-git clone https://github.com/bryanzns/bryPDF.git
-```</h5> 
+<h5 align="center">Abra o terminal e execute:<br><br>
+git clone https://github.com/bryanzns/bryPDF.git</h5> 
 
 <h3 align="left">📦 Ou baixando como ZIP</h3>
 
