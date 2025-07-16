@@ -44,6 +44,7 @@
 <br clear="both">
 
 <h5 align="center">Abra o terminal e execute:<br><br> ```bash 
+
 git clone https://github.com/bryanzns/bryPDF.git
 ``` </h5>
 
